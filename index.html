@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b12">
+  <meta name="description" content="Turn your photos into beautiful pixel art for free with Pixelify.">
+  <title>Pixelify — Image to Pixel Art</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#" aria-label="Pixelify home">
+      <span class="logo">▦</span> PIXELIFY
+    </a>
+    <span class="nav-label">YOUR PHOTO. YOUR PIXELS.</span>
+    <a class="nav-link" href="#converter">Start creating ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="live-dot"></span> FREE PIXEL ART STUDIO</div>
+      <h1>Make it <span>pixel.</span></h1>
+      <p class="hero-description">
+        Transform ordinary photos into extraordinary pixel art.
+        No account. No uploads to a server. Just create.
+      </p>
+    </section>
+
+    <section class="workspace" id="converter">
+      <div class="workspace-heading">
+        <div>
+          <h2>Pixel Studio</h2>
+          <p>Turn your favorite image into retro art.</p>
+        </div>
+        <span class="status"><span class="live-dot"></span> READY</span>
+      </div>
+
+      <input type="file" id="fileInput" accept="image/*" hidden>
+
+      <div class="upload-area" id="uploadArea" role="button"
+           tabindex="0" aria-label="Upload an image">
+        <div class="upload-icon">↑</div>
+        <h3>Drop your image here</h3>
+        <p>or <span class="text-link">browse files</span></p>
+        <small>PNG, JPG, WEBP · Maximum 15 MB</small>
+      </div>
+
+      <p class="error-message" id="errorMessage" role="alert" hidden></p>
+
+      <div class="preview-grid" id="previewGrid" hidden>
+        <div class="preview-card">
+          <div class="preview-title">
+            <span>ORIGINAL</span>
+            <span class="preview-tag">SOURCE</span>
+          </div>
+          <div class="image-frame">
+            <img id="originalImage" alt="Original uploaded image">
+          </div>
+        </div>
+
+        <div class="preview-card">
+          <div class="preview-title">
+            <span>PIXEL ART</span>
+            <span class="preview-tag accent-tag">CREATED</span>
+          </div>
+          <div class="image-frame pixel-frame">
+            <canvas id="pixelCanvas" aria-label="Converted pixel art"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls" id="controls" hidden>
+        <div class="control-heading">
+          <div>
+            <label for="pixelSize">Pixel size</label>
+            <p>Higher values create chunkier pixels.</p>
+          </div>
+          <output id="pixelValue" for="pixelSize">12</output>
+        </div>
+
+        <input type="range" id="pixelSize"
+               min="2" max="40" value="12" step="1">
+
+        <div class="range-labels">
+          <span>Fine detail</span>
+          <span>Retro 8-bit</span>
+        </div>
+
+        <div class="button-row">
+          <button class="button secondary" id="changeImage">
+            ↻ Change image
+          </button>
+          <button class="button primary" id="downloadButton">
+            ↓ Download PNG
+          </button>
+        </div>
+      </div>
+
+      <div class="empty-hint" id="emptyHint">
+        <span>✳</span>
+        <p>Your next pixel masterpiece starts here.</p>
+      </div>
+
+      <div class="privacy-note">
+        <span>♧</span>
+        <span>Your images stay in your browser. Nothing is uploaded.</span>
+      </div>
+    </section>
+
+    <section class="features">
+      <article class="feature-card">
+        <span class="feature-icon">▦</span>
+        <h3>Instant conversion</h3>
+        <p>Turn photos into pixel art in seconds.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-icon">⌘</span>
+        <h3>Your creative control</h3>
+        <p>Choose the pixel size that fits your style.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-icon">↓</span>
+        <h3>Download for free</h3>
+        <p>Save your artwork as a PNG image.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#"><span class="logo">▦</span> PIXELIFY</a>
+    <p>Made for people who love pixels. © <span id="year"></span></p>
+  </footer>
+</body>
+      </html>
+      
